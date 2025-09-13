@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Button, StatusBar, Alert } from 'react-native';
 
 export default function App() {
+  const handlePress = () => {
+    Alert.alert('Button Pressed!', 'You pressed the button.');
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar barStyle="light-content" />
+      <Text>This is the beginning of your app!</Text>
+      <Button title="Press Me" onPress={handlePress} />
     </View>
   );
 }
@@ -13,7 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
